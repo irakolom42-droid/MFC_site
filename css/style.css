@@ -325,6 +325,7 @@ html, body {
     color: #ffffff;
 }
 
+
 /* Блок полезных ссылок */
 .useful_links {
     display: flex;
@@ -357,6 +358,56 @@ html, body {
     color: #ccc;
     font-size: 13px;
 }
+
+
+/* кнопка Наверх */
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #E04E39 0%, #c13e2a 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(224,78,57,0.3);
+    transition: all 0.3s ease;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(224,78,57,0.5);
+}
+
+.back-to-top::before {
+    content: '↑';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.back-to-top span {
+    margin-left: 5px;
+}
+
+
+
+
 
 /* ========== ЗАКРЕПЛЕННАЯ ПАНЕЛЬ (MAIN) ========== */
 .main {

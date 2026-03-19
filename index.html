@@ -6,6 +6,30 @@
     <title>ТестКРЫМ_МФЦ Мои Документы</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<script>
+    // Кнопка "Наверх"
+    document.addEventListener('DOMContentLoaded', function() {
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        if (backToTopButton) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+</script>
 <body>
     <!-- ШАПКА САЙТА -->
     <div class="area">
@@ -71,7 +95,7 @@
                     <span class="contact-center_title">Режим работы единого контакт-центра:</span>
                     <div class="work-hours">
                         <div class="work-day">
-                            <span class="day">пн.- чт.</span>
+                            <span class="day">понедельник - четверг</span>
                             <span class="time">с 9:00 до 18:00</span>
                         </div>
                         <div class="work-day">
@@ -91,6 +115,11 @@
             </div>
         </div>
     </div>
+
+
+<a href="#" class="back-to-top" id="back-to-top">
+    <span>Наверх</span>
+</a>
 
     <!-- ЗАКРЕПЛЕННАЯ ПАНЕЛЬ НАВИГАЦИИ (main) -->
     <header class="main">
