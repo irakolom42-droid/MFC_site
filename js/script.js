@@ -219,6 +219,9 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: "Прием заявлений физических лиц на выдачу квалифицированных сертификатов ключей проверки электронных подписей, проведение очной идентификации заявителя.", org: "ИНЫЕ УСЛУГИ (Процедуры и функции)", id: 181 }
     ];
 
+
+
+
     // --- Данные для жизненных ситуаций из Excel файла (8 ситуаций + одна дополнительная) ---
     const lifeEventsData = [
         { 
@@ -985,10 +988,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    // Делаю функции глобальными
+
+
+  // Делаю функции глобальными
     window.renderFaqPage = renderFaqPage;
     window.renderServicesPage = renderServicesPage;
     window.renderUrgentPage = renderUrgentPage;
     window.renderLifeEventsPage = renderLifeEventsPage;
     window.renderPlaceholder = renderPlaceholder;
+});
+
+
+// Кнопка "Наверх"
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    if (backToTopButton) {
+        // Показываем/скрываем кнопку при прокрутке
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) { // Показываем после прокрутки на 300px
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        // Плавная прокрутка наверх при клике
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault(); // Отменяем стандартное поведение ссылки
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Плавная прокрутка
+            });
+        });
+    }
 });
