@@ -6,30 +6,8 @@
     <title>ТестКРЫМ_МФЦ Мои Документы</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<script>
-    // Кнопка "Наверх"
-    document.addEventListener('DOMContentLoaded', function() {
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        if (backToTopButton) {
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    backToTopButton.classList.add('show');
-                } else {
-                    backToTopButton.classList.remove('show');
-                }
-            });
-            
-            backToTopButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
-    });
-</script>
+
+    
 <body>
     <!-- ШАПКА САЙТА -->
     <div class="area">
